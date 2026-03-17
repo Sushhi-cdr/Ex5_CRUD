@@ -25,8 +25,8 @@ public class ControleCategoria {
     }
 
     @GetMapping("/{id}")
-    public Categoria buscar(@PathVariable Long id) {
-        return repositorio.buscarPorId(id);
+    public Categoria buscarPorId(@PathVariable Long id){
+        return repositorio.findById(id).orElse(null);
     }
 
     @DeleteMapping("/{id}")
